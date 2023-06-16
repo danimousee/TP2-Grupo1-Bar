@@ -1,26 +1,22 @@
-import API from '../API/server.js'
-import ServicioServer from '../servicio/server.js'
+import ApiTragos from '../API/tragos.js'
 
-const tragos = [
-    { nombre: "cerveza" },
-    { nombre: "fernet" }
-]
 
-class Controlador {
+class ControladorTragos {
+
     constructor() {
-        this.api = new API()
+        this.apiTragos = new ApiTragos()
     }
 
     obtenerTragos = (req, res) =>{
     
-    
+    res.json(this.apiTragos.obtenerTragos())
 
     }
     
     
 }
 
-export default Controlador
+export default ControladorTragos
 
 // this.router.get('/', this.controlador.obtenerInicio)
 // this.router.get('/', this.controlador.obtenerReservas)

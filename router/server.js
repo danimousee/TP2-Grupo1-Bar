@@ -1,20 +1,22 @@
 import express from 'express'
-import Controlador from '../controlador/server.js'
+import ControladorTragos from '../controlador/tragos.js'
 
 class Router {
     constructor() {
         this.router = express.Router()
-        this.controlador = new Controlador()
+        this.controladorTragos = new ControladorTragos()
     }
 
     start() {
-        this.router.get('/LaMixtureria', this.controlador.obtenerInicio)
-        this.router.get('/LaMixtureria/Reservas', this.controlador.obtenerReservas)
-        this.router.get('/LaMixtureria/Carta', this.controlador.obtenerCarta)
-        this.router.get('/LaMixtureria/Carta/Tragos', this.controlador.obtenerTragos)
-        this.router.get('/LaMixtureria/Carta/Platos', this.controlador.obtenerPlatos)
-        this.router.get('/LaMixtureria/Sucursales', this.controlador.obtenerSucursales)
+        //this.router.get('/', this.controlador.obtenerInicio)
+        //this.router.get('/Reservas', this.controlador.obtenerReservas)
+       // this.router.get('/Carta', this.controlador.obtenerCarta)
+        this.router.get('/Carta/Tragos', this.controladorTragos.obtenerTragos)
+        //this.router.get('/Carta/Platos', this.controlador.obtenerPlatos)
+        //this.router.get('/Sucursales', this.controlador.obtenerSucursales)
         //this.router.get('/', this.controlador.obtenerSpotify)
+
+        return this.router
     }
 
 }   
