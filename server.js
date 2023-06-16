@@ -16,12 +16,8 @@ const routerServer = new RouterServer()
 /*             API REST Ful                                      */
 /* ------------------------------------------------------------- */
 
-app.use('/LaMixtureria', RouterServer().start())
-app.use('/LaMixtureria/Reservas', RouterServer().start)
-app.use('/LaMixtureria/Carta', RouterServer().start)
-    app.use('/LaMixtureria/Carta/Platos', RouterServer().start)
-    app.use('/LaMixtureria/Carta/Tragos', RouterServer().start)
-app.use('/LaMixtureria/Sucursales', RouterServer().start)
+app.use('/LaMixtureria', new RouterServer().start())
+
 //app.use('/LaMixtureria/Playlist', RouterServer().start)
 
 
