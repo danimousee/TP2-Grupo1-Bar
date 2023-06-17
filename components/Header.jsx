@@ -1,13 +1,16 @@
-import Title from "./Title";
-import Nav from "/Nav";
+import Nav from "./Nav";
+
 
 const Header = () => {
+
   return (
     <header>
+      <Nav />
       <Title nombre="Titulo del Header" color="black" />
       <Nav link1={"Home"} link2={"Carta"} link3={"Sucursales"} />
     </header>
   );
 };
-// Seguir agregando los links a medida que hacemos mas funcionalidades
 export default Header;
+
+//Linea 10: La dejo pero creo que lo de la linea 8 lo reemplazaria
