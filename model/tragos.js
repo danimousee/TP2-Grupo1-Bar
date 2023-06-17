@@ -1,19 +1,14 @@
-
+import Tragos from '../productos/tragos.js'
 
 class ModelTragos{
 
 constructor(){
-
-    this.tragos = [
-        { nombre: "cerveza" },
-        { nombre: "fernet" }
-    ]
-
+    this.tragos = new Tragos()
 }
 
-obtenerTragos = () =>{
+obtenerTragos = async () =>{
     console.log(this.tragos)
-    return this.tragos
+    return await Promise.resolve (this.tragos)
 }
 
 }

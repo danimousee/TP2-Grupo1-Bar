@@ -7,8 +7,8 @@ class ApiTragos {
     constructor() {
   this.modelTragos = new ModelTragos()
     }
-
-    obtenerTragos = () =>{return this.modelTragos.obtenerTragos()}
+    
+    obtenerTragos = async () =>{return await this.modelTragos.obtenerTragos()}
 }
 
 export default ApiTragos 

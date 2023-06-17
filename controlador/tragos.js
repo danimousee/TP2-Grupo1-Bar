@@ -7,9 +7,9 @@ class ControladorTragos {
         this.apiTragos = new ApiTragos()
     }
 
-    obtenerTragos = (req, res) =>{
+    obtenerTragos = async (req, res) =>{
     
-    res.json(this.apiTragos.obtenerTragos())
+    res.json( await this.apiTragos.obtenerTragos())
 
     }
     
