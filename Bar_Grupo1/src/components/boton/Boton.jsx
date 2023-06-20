@@ -6,11 +6,11 @@ const Boton = ({ url }) => {
     <>
       <div>
 
-        <Button className='boton' variant='outline-light' size='lg' >
+        <Button className='boton' variant='outline-light' >
           Nuestra carta
         </Button><br></br><br></br>
 
-        <Button className='boton' variant='outline-light' size='lg'>
+        <Button className='boton' variant='outline-light'>
           Reservas
         </Button>
 
