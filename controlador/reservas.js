@@ -32,13 +32,13 @@ class ControladorReservas {
 
     guardarReserva = async (req,res) => {
         try {
-            let reserva = req.body
-            let reservaSave = await this.apiReservas.guardarReserva(reserva)
+            const reserva = req.body
+            const reservaSave = await this.apiReservas.guardarReserva(reserva)
 
             res.json(reservaSave)
         }
         catch(error) {
-            console.log('error obtenerReservas', error)
+            console.log({ error: error.message })
         }
     }
 
