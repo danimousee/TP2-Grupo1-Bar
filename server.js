@@ -22,9 +22,9 @@ app.use('/LaMixtureria', new RouterServer().start())
 /* ------------------------------------------------------------- */
 /*                      Servidor LISTEN                          */
 /* ------------------------------------------------------------- */
-//if(config.PERSISTENCIA == 'MONGO') {
-//    await CnxMongoDB.conectar()
-//}
+if(config.PERSISTENCIA == 'MONGODB') {
+    await CnxMongoDB.conectar()
+}
 const PORT = config.PORT
 const server = app.listen(PORT, () => console.log(`Servidor express escuchando en el puerto http://127.0.0.1:${PORT}`))
 server.on('error', error => console.log('Servidor express en error:', error) )

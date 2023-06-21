@@ -1,4 +1,4 @@
-import Tragos from '../productos/tragos.js'
+import Tragos from '../../productos/tragos.js'
 
 class ModelTragos{
 
