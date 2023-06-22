@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
     "watch": "nodemon server.js",
-    "test-manual" : "node test/api.prueba.manual.js"
+    "test-manual" : "node test/api.prueba.manual.js",
+    "test-gen-prod" : "mocha test/reserva.test.js --timeout 10000"
   },
   "engines": {
     "node": ">=14"
