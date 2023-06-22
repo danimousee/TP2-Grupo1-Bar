@@ -1,4 +1,4 @@
-import ModelTragos from '../model/tragos.js'
+import ModelTragos from '../model/DAOs/tragos.js'
 
 
 

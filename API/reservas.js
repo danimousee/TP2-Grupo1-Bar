@@ -1,4 +1,4 @@
-import ReservasFS from '../model/reservas.js'
+import ReservasFS from '../model/DAOs/reservasFS.js'
 
 class ApiReservas {
 
