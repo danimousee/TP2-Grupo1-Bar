@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import PersonajesMap from "./PersonajesMap";
+import TragosMap from "./TragosMap";
 
 const TragosContainer = () => {
   const {data, isError, isLoading} = useGetAllCharactersQuery();

@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import PersonajeDetail from "./PersonajeDetail";
+import TragoDetail from "./TragoDetail";
 //import { useGetOneCharacterQuery } from "../../store/service/rickAndMorty";
 
 const TragoContainer = () => {
