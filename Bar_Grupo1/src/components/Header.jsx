@@ -1,11 +1,10 @@
-// import Nav from "./Nav";
-
+import Nav from "./Nav";
 
 const Header = () => {
 
   return (
     <header>
-      {/* <Nav /> */}
+      {<Nav />}
       {/* <Title nombre="Titulo del Header" color="black" /> */}
       "profe copate dale"
       {/* <Nav link1={"Home"} link2={"Carta"} link3={"Sucursales"} /> */}
