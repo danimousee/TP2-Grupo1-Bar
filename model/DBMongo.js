@@ -1,5 +1,5 @@
 import { MongoClient }  from "mongodb";
-import config from "../../config";
+import config from "../config.js";
 
 class CnxMongoDB {
     static client = null
@@ -29,3 +29,5 @@ class CnxMongoDB {
         CnxMongoDB.client.close()
     }
 }
+
+export default CnxMongoDB

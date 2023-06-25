@@ -1,7 +1,7 @@
 import express from 'express'
 import RouterServer from './router/server.js'
 import config from './config.js'
-// import CnxMongoDB from './model/DBMongo.js'
+import CnxMongoDB from './model/DBMongo.js'
 
 const app = express()
 
@@ -22,7 +22,7 @@ app.use('/LaMixtureria', new RouterServer().start())
 /* ------------------------------------------------------------- */
 /*                      Servidor LISTEN                          */
 /* ------------------------------------------------------------- */
-if(config.PERSISTENCIA == 'MONGODB') {
+if(config.MODO_PERSISTENCIA == 'MONGODB') {
     await CnxMongoDB.conectar()
 }
 const PORT = config.PORT

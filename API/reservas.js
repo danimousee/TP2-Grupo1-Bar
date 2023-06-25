@@ -1,9 +1,10 @@
-import ReservasFS from '../model/DAOs/reservasFS.js'
+//import ReservasFS from '../model/DAOs/reservasFS.js'
+import ModelMongoDB from '../model/DAOs/reservasMongoDB.js'
 
 class ApiReservas {
 
     constructor() {
-        this.reservasDAO = new ReservasFS()
+        this.reservasDAO = new ModelMongoDB()
     }
 
     async obtenerReservas() { 
@@ -11,7 +12,7 @@ class ApiReservas {
     }
 
     async obtenerReserva(id) { 
-        return await this.reservasDAO.obtenerReserva(id)
+        return await this.reservasDAO.obtenerReservas(id)
     }
 
     async guardarReserva(reserva) { 
