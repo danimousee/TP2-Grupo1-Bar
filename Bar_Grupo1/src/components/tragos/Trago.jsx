@@ -2,12 +2,12 @@ import { Link } from "react-router-dom";
 
 const Trago = ({ trago }) => {
   return (
-    <Link to={`/detail/${trago.id}`}>
+    
       <div className="tragosContainer">
-        <h1>{trago.name}</h1>
-        <img src={trago.image} alt={trago.name} />
+        <h1>{trago.nombre}</h1>
+        <h2>Precio: ${trago.precio}</h2>
       </div>
-    </Link>
+    
   );
 };
 export default Trago;

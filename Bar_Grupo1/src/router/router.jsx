@@ -3,6 +3,7 @@ import App from '../App'
 import Carta from '../carta/Carta'
 import MenuPlatos from '../carta/MenuPlatos'
 import MenuTragos from '../carta/MenuTragos'
+import TragosContainer from '../components/tragos/TragosContainer'
 
 
 const router = createBrowserRouter ([
@@ -27,7 +28,7 @@ const router = createBrowserRouter ([
         [
             {
                 path: "/LaMixtureria/Carta/Tragos",
-                element: <MenuTragos/>
+                element: <TragosContainer/>
             },
             {
                 path: "/LaMixtureria/Carta/Platos",

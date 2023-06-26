@@ -12,6 +12,7 @@ const Main = () => {
         </div>
         <Boton />
       </div>
+      <Outlet/>
     </main>
   );
 };
