@@ -1,22 +1,25 @@
+import { useEffect, useState } from "react";
+import { useGetAllPlatosQuery } from "../store/service/platos";
+
 const MenuPlatos = () => {
+    const {data, isError, isLoading} = useGetAllPlatosQuery();
+
+    if (isLoading) {
+        return <h1>Cargando Platos...</h1>
+    }
+
+    if (isError) {
+        return <h1>Error al cargar los platos</h1>
+    }
+
     return (
-    <div id="TablaPlatos">
-        <table>
-            <thead>
-                <tr>
-                    <th>Imagen</th>
-                    <th>Nombre</th>
-                    <th>Contenido</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-      
+        <>
+        <h1>MENÚ DE PLATOS</h1>
+        <div className="plato">
+           //TODO: ACA HAY QUE AGREGAR LOS PLATOS
+        </div>
+        </>
     )
-  };
+}
 
-export default MenuPlatos;
-
-//Lo mismo que para los tragos. Si es que vamos a poner platos tambien, entonces podemos dejar esta tabla
-//en donde mostramos lo mismo que en MenuTragos nada mas que en este no mostramos tragos, sino los platos que servimos.
+export default MenuPlatos

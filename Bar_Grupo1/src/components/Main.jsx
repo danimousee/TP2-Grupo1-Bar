@@ -10,9 +10,10 @@ const Main = () => {
         <div className="logo">
           <Images url={logo} />
         </div>
-        <Boton />
+        <Boton name={"Nuestra Carta"} url= {"/LaMixtureria/Carta"} />
+        <br></br>
+        <Boton name={"Reservas"} url= {"/LaMixtureria/Reservas"} />
       </div>
-      <Outlet/>
     </main>
   );
 };

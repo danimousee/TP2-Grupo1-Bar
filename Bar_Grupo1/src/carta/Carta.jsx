@@ -1,15 +1,22 @@
+import Boton from "../components/boton/Boton";
+
 const Carta = () => {
         return (
-        <div> Nuestra carta
-            <button type="button" class="boton btn btn-outline-light">Platos</button>
-            <br></br>
-            <button type="button" class="boton btn btn-outline-light">Tragos</button>
+        <>
+        <div> 
+            <h1 className="TituloCarta">NUESTRA CARTA</h1>
         </div>
+        <div>
+          <Boton name= {"Platos"} url= {"LaMixtureria/Carta/Platos"}/>
+          <br></br>
+          <Boton name= {"Tragos"} url= {"LaMixtureria/Carta/Tragos"}/>
+        </div>
+        </>
           
         )
       };
   
-  export default Carta;
+export default Carta
 
 //Aca hice como en la pagina de Green Bamboo que cuando apretas donde dice "Nuestro menu" te lleva a
 //una pagina donde tenes tres botones. En nuestro caso, le puse para que hayan dos botones que uno

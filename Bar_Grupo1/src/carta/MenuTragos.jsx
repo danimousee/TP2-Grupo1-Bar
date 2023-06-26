@@ -1,22 +1,25 @@
+import { useEffect, useState } from "react";
+import { useGetAllTragosQuery } from "../store/service/tragos";
+
 const MenuTragos = () => {
+    const {data, isError, isLoading} = useGetAllTragosQuery();
+
+    if (isLoading) {
+        return <h1>Cargando Tragos...</h1>
+    }
+
+    if (isError) {
+        return <h1>Error al cargar los Tragos</h1>
+    }
+
     return (
-    <div id="TablaTragos">
-        <table>
-            <thead>
-                <tr>
-                    <th>Imagen</th>
-                    <th>Nombre</th>
-                    <th>Contenido</th>
-                    <th>Precio</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-      
+        <>
+        <h1>MENÚ DE TRAGOS</h1>
+        <div className="trago">
+           //TODO: ACA HAY QUE AGREGAR LOS TRAGOSsss
+        </div>
+        </>
     )
-  };
+}
 
-export default MenuTragos;
-
-//Esta tabla vendria a ser para mostrar los tragos. Estaria bueno que en el mismo menu esten los tragos encolumnados
-//cada uno con su imagen, su nombre, su contenido y su precio.
+export default MenuTragos

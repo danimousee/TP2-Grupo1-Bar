@@ -1,26 +1,19 @@
-
+import React from 'react';
 import Button from 'react-bootstrap/Button';
-import TragosContainer from '../tragos/TragosContainer';
 import { Link } from 'react-router-dom';
 
-const Boton = () => {
+
+
+const Boton = ({ name, url }) => {
   return (
-    <>
-      <div>
-        
-        <Button className='boton' variant='outline-light' >
-          Nuestra carta
-        </Button>
-        <br></br><br></br>
-
+    <div>
+      <Link to={url}>
         <Button className='boton' variant='outline-light'>
-          Reservas
+          {name}
         </Button>
+      </Link>
+    </div>
+  );
+};
 
-      </div>
-
-    </>
-  )
-}
-
-export default Boton
+export default Boton;
