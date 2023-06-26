@@ -1,4 +1,6 @@
+import { Link, Outlet } from "react-router-dom";
 import Boton from "../components/boton/Boton";
+
 
 const Carta = () => {
         return (
@@ -7,10 +9,11 @@ const Carta = () => {
             <h1 className="TituloCarta">NUESTRA CARTA</h1>
         </div>
         <div>
-          <Boton name= {"Platos"} url= {"LaMixtureria/Carta/Platos"}/>
+          <Boton name= {"Platos"} url= {"/LaMixtureria/Carta/Platos"}/>
           <br></br>
-          <Boton name= {"Tragos"} url= {"LaMixtureria/Carta/Tragos"}/>
+          <Boton name= {"Tragos"} url= {"/LaMixtureria/Carta/Tragos"}/>
         </div>
+        <Outlet/>
         </>
           
         )

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useGetAllTragosQuery } from "../store/service/tragos";
+import TragosContainer from "../components/tragos/TragosContainer";
 
 const MenuTragos = () => {
     const {data, isError, isLoading} = useGetAllTragosQuery();
@@ -16,7 +17,7 @@ const MenuTragos = () => {
         <>
         <h1>MENÚ DE TRAGOS</h1>
         <div className="trago">
-           //TODO: ACA HAY QUE AGREGAR LOS TRAGOSsss
+           <TragosContainer/>
         </div>
         </>
     )

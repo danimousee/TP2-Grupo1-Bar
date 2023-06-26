@@ -1,41 +1,39 @@
-import { createBrowserRouter } from 'react-router-dom'
+import { createBrowserRouter, redirect } from 'react-router-dom'
 import App from '../App'
 import Carta from '../carta/Carta'
 import MenuPlatos from '../carta/MenuPlatos'
 import MenuTragos from '../carta/MenuTragos'
 import TragosContainer from '../components/tragos/TragosContainer'
+import PlatosContainer from '../components/platos/PlatosContainer'
 
 
-const router = createBrowserRouter ([
+const router = createBrowserRouter([
     {
         path: "/",
-        element: <App/>,
+        element: <App />,
         children: [
-            {
-                path: "/",
-                element: <App/>
-            },
+
             {
                 path: "/LaMixtureria",
-                element: <App/>
+                element: <App />
             },
+
         ]
     },
     {
         path: "/LaMixtureria/Carta",
-        element: <Carta/>,
-        children: 
-        [
-            {
-                path: "/LaMixtureria/Carta/Tragos",
-                element: <TragosContainer/>
-            },
-            {
-                path: "/LaMixtureria/Carta/Platos",
-                element: <MenuPlatos/>
-            }
-        ]
+        element: <Carta />,
     },
+
+    {
+        path: "/LaMixtureria/Carta/Tragos",
+        element: <TragosContainer />,
+
+    },
+    {
+        path: "/LaMixtureria/Carta/Platos",
+        element: <PlatosContainer />,
+    }
 ])
 
 export default router
