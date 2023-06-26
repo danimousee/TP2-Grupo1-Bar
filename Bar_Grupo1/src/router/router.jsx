@@ -5,6 +5,7 @@ import MenuPlatos from '../carta/MenuPlatos'
 import MenuTragos from '../carta/MenuTragos'
 import TragosContainer from '../components/tragos/TragosContainer'
 import PlatosContainer from '../components/platos/PlatosContainer'
+import Home from '../components/Home'
 
 
 const router = createBrowserRouter([
@@ -15,24 +16,24 @@ const router = createBrowserRouter([
 
             {
                 path: "/LaMixtureria",
-                element: <App />
+                element: <Home />
             },
+            {
+                path: "/LaMixtureria/Carta",
+                element: <Carta />,
+            },
+        
+            {
+                path: "/LaMixtureria/Carta/Tragos",
+                element: <TragosContainer />,
+        
+            },
+            {
+                path: "/LaMixtureria/Carta/Platos",
+                element: <PlatosContainer />,
+            }
 
         ]
-    },
-    {
-        path: "/LaMixtureria/Carta",
-        element: <Carta />,
-    },
-
-    {
-        path: "/LaMixtureria/Carta/Tragos",
-        element: <TragosContainer />,
-
-    },
-    {
-        path: "/LaMixtureria/Carta/Platos",
-        element: <PlatosContainer />,
     }
 ])
 
