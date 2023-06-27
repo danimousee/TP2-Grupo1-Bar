@@ -3,8 +3,8 @@ import ApiReservas from '../API/reservas.js'
 
 class ControladorReservas {
 
-    constructor() {
-        this.apiReservas = new ApiReservas()
+    constructor(persistencia) {
+        this.apiReservas = new ApiReservas(persistencia)
     }
 
     obtenerReservas = async (req,res) => {

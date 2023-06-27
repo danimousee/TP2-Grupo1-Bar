@@ -1,5 +1,4 @@
 import { MongoClient }  from "mongodb";
-import config from "../config.js";
 
 class CnxMongoDB {
     static client = null
@@ -24,9 +23,14 @@ class CnxMongoDB {
         }
     }
 
-    static desconectar = () => {
-        if(!CnxMongoDB.connectOk) return
-        CnxMongoDB.client.close()
+    static desconectar = async () => {
+        if(!this.connectOk) return
+        await this.client.close()
+        this.connectOk = false 
+    }
+    async stop() {
+        this.server.close()
+        await CnxMongoDB.desconectar()
     }
 }
 

@@ -1,15 +1,22 @@
 import express from 'express'
 import RouterServer from './router/server.js'
-import config from './config.js'
 import CnxMongoDB from './model/DBMongo.js'
 import cors from 'cors'
 
-const app = express()
+class Server {
 
-app.use(express.static('public'))
-app.use(express.json())
-app.use(express.urlencoded({extended: true}))
-app.use(cors({
+    constructor(port, persistencia) {
+        this.app = express()
+        this.port = port
+        this.persistencia = persistencia
+    }
+async start() {
+this.app = express()
+
+this.app.use(express.static('public'))
+this.app.use(express.json())
+this.app.use(express.urlencoded({extended: true}))
+this.app.use(cors({
     origin:"http://localhost:5173"
 }))
 
@@ -18,7 +25,7 @@ app.use(cors({
 /*             API REST Ful                                      */
 /* ------------------------------------------------------------- */
 
-app.use('/LaMixtureria', new RouterServer().start())
+this.app.use('/LaMixtureria', new RouterServer(this.persistencia).start())
 
 //app.use('/LaMixtureria/Playlist', RouterServer().start)
 
@@ -29,6 +36,15 @@ app.use('/LaMixtureria', new RouterServer().start())
 if(config.MODO_PERSISTENCIA == 'MONGODB') {
     await CnxMongoDB.conectar()
 }
-const PORT = config.PORT
-const server = app.listen(PORT, () => console.log(`Servidor express escuchando en el puerto http://127.0.0.1:${PORT}`))
-server.on('error', error => console.log('Servidor express en error:', error) )
+const PORT = this.port
+const server = this.app.listen(PORT, () => console.log(`Servidor express escuchando en el puerto http://127.0.0.1:${PORT}`))
+server.on('error', error => console.log('Servidor express en error:', error))
+   
+return this.app
+} 
+stop() {
+    this.server.close()
+}
+   
+}
+export default Server

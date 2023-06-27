@@ -4,11 +4,11 @@ import ControladorReservas from '../controlador/reservas.js'
 import controladorPlatos from '../controlador/platos.js'
 
 class Router {
-    constructor() {
+    constructor(persistencia) {
         this.router = express.Router()
-        this.controladorTragos = new ControladorTragos()
-        this.controladorReservas = new ControladorReservas()
-        this.controladorPlatos = new controladorPlatos()
+        this.controladorTragos = new ControladorTragos(persistencia)
+        this.controladorReservas = new ControladorReservas(persistencia)
+        this.controladorPlatos = new controladorPlatos(persistencia)
     }
 
     start() {

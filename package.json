@@ -5,11 +5,13 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "watch": "nodemon server.js",
+    "test": "mocha test/*.test.js --timeout 10000",
+    "start": "node index.js",
+    "watch": "nodemon index.js",
     "test-manual": "node test/api.prueba.manual.js",
-    "test-gen-prod": "mocha test/reserva.test.js --timeout 10000"
+    "test-gen-prod": "mocha test/reserva.test.js --timeout 10000",
+    "test-api-ext": "mocha test/api.ext.test.js --timeout 10000",
+    "test-api-int": "mocha test/api.int.test.js --timeout 10000"
   },
   "engines": {
     "node": ">=14"

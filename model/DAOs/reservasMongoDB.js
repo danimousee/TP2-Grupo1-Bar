@@ -3,7 +3,8 @@ import CnxMongoDB from "../DBMongo.js"
 
 class ModelMongoDB {
 
-    constructor() {
+    constructor(persistencia) {
+        this.model = ModelFactory.get(persistencia)
     }
 
     obtenerReservas = async id => {
