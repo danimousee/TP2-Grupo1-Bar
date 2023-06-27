@@ -1,5 +1,6 @@
 import axios from "axios";
 import { useState } from "react";
+import { useForm } from "react-hook-form"
 
 const Register = () => {
   const [data, setData] = useState({
@@ -34,7 +35,11 @@ const Register = () => {
       <form onSubmit={handleSubmit}>
         <label htmlFor="nombre">Nombre</label>
         
-        <input
+        <input 
+          required
+          minLength={3}
+          maxLength={50}
+          pattern="[A-Za-z ]{1,32}"
           type="text"
           name="nombre"
           value={data.nombre}
@@ -45,6 +50,9 @@ const Register = () => {
 
         <label htmlFor="cantPersonas">Personas</label>
         <input
+          required
+          min={1}
+          max={5}
           type="number"
           name="cantPersonas"
           id="cantPersonas"
@@ -54,6 +62,9 @@ const Register = () => {
 
 <label htmlFor="telefono">Telefono</label>
         <input
+          required
+          minLength={10}
+          maxLength={10}
           type="tel"
           name="telefono"
           id="telefono"
@@ -63,6 +74,7 @@ const Register = () => {
 
 <label htmlFor="fecha">Fecha de reserva</label>
         <input
+          required
           type="datetime-local"
           name="fecha"
           id="fecha"
@@ -72,6 +84,8 @@ const Register = () => {
 
         <label htmlFor="email">email</label>
         <input
+          required
+          pattern="[^ @]*@[^ @]*"
           type="email"
           name="email"
           id="email"
@@ -86,4 +100,5 @@ const Register = () => {
     </div>
   );
 };
+
 export default Register;
