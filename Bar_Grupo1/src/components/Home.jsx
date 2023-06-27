@@ -1,6 +1,12 @@
+import Boton from "./boton/Boton";
+
 const Home = () => {
     return (
-      <div>Home</div>
+      <div className="container">
+        <Boton name={"Nuestra Carta"} url= {"/LaMixtureria/Carta"} />
+        <br></br>
+        <Boton name={"Reservas"} url= {"/LaMixtureria/Reservas"} />
+      </div>
     )
   }
   export default Home

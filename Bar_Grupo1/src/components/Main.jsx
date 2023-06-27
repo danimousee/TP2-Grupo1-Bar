@@ -1,19 +1,12 @@
-import Boton from "./boton/Boton";
-import Images from "./images/images";
-import logo from "../imagenes/Logo_LAMIXTURERIA.png";
-import TragosContainer from "./tragos/TragosContainer";
+
+import { Outlet } from "react-router-dom";
+import Back from "./back/Back";
 
 const Main = () => {
   return (
     <main>
-      <div className="container">
-        <div className="logo">
-          <Images url={logo} />
-        </div>
-        <Boton name={"Nuestra Carta"} url= {"/LaMixtureria/Carta"} />
-        <br></br>
-        <Boton name={"Reservas"} url= {"/LaMixtureria/Reservas"} />
-      </div>
+      <Back/>
+      <Outlet/>
     </main>
   );
 };
