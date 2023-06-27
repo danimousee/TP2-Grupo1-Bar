@@ -21,7 +21,7 @@ const Register = () => {
     e.preventDefault();
     console.log(data);
     axios
-    .post("http://localhost:8080/users",data)
+    .post("http://localhost:8080/LaMixtureria/Reservas/",data)
     .then((response) => console.log(response))
     .catch((error) => console.log(error));
 

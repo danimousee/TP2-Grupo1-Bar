@@ -19,7 +19,7 @@ class CnxMongoDB {
             this.connectOk = true
         }
         catch(error) {
-            console.log('Error en la conexion a la base de datos:', $(error.message))
+            console.log('Error en la conexion a la base de datos', (error.message))
         }
     }
 

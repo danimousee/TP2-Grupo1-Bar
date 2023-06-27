@@ -2,6 +2,7 @@ import express from 'express'
 import RouterServer from './router/server.js'
 import CnxMongoDB from './model/DBMongo.js'
 import cors from 'cors'
+import config from './config.js'
 
 class Server {
 

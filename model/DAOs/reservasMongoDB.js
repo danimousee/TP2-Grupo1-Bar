@@ -1,10 +1,11 @@
 import { ObjectId } from "mongodb"
 import CnxMongoDB from "../DBMongo.js"
+import ReservasFactoryDAO from "./reservasFactory.js"
 
 class ModelMongoDB {
 
     constructor(persistencia) {
-        this.model = ModelFactory.get(persistencia)
+        this.model = ReservasFactoryDAO.get(persistencia)
     }
 
     obtenerReservas = async id => {

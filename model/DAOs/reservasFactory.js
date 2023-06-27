@@ -1,16 +1,15 @@
-// import NumerosMemDAO from './numerosMem.js'
-// import NumerosFileDAO from './numerosFile.js'
-// import NumerosMongoDAO from './numerosMongo.js'
-// import config from '../../config.js'
+import ModelMongoDB from "./reservasMongoDB.js";
+import ReservasFS from "./reservasFS.js";
+import { config } from "dotenv";
 
-// class NumerosFactoryDAO {
-//     static get(tipo) {
-//         switch(tipo) {
-//             case 'FILE': return new NumerosFileDAO(config.FILE)
-//             case 'MONGO': return new NumerosMongoDAO(config.MONGOURL)
-//             default: return new NumerosMemDAO()
-//         }
-//     }
-// }
 
-// export default NumerosFactoryDAO
+class ReservasFactoryDAO {
+    static get(tipo) {
+        switch(tipo) {
+            case 'FILE': return new ReservasFS(config.FILE)
+            case 'MONGODB': return new ModelMongoDB(config.MONGODB)
+                }
+    }
+}
+
+export default ReservasFactoryDAO;
