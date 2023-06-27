@@ -6,6 +6,7 @@ import MenuTragos from '../carta/MenuTragos'
 import TragosContainer from '../components/tragos/TragosContainer'
 import PlatosContainer from '../components/platos/PlatosContainer'
 import Home from '../components/Home'
+import Register from '../components/register/Register'
 
 
 const router = createBrowserRouter([
@@ -22,19 +23,29 @@ const router = createBrowserRouter([
                 path: "/LaMixtureria/Carta",
                 element: <Carta />,
             },
-        
+
             {
                 path: "/LaMixtureria/Carta/Tragos",
                 element: <TragosContainer />,
-        
+
             },
             {
                 path: "/LaMixtureria/Carta/Platos",
                 element: <PlatosContainer />,
-            }
+            },
+            {
+                path: "/LaMixtureria/Reservas",
+                element: <Register />,
+            },
 
-        ]
+        ],
+    },
+
+    {
+        path: "/LaMixtureria/Reservas",
+        element: <Register />,
     }
+
 ])
 
 export default router

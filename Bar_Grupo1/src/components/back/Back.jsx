@@ -5,10 +5,12 @@ import logo from "../../imagenes/Logo_LAMIXTURERIA.png";
 
 const Back = () => {
   return (
-    <div className="logo">
-    <Link to={"/LaMixtureria"}>
-    <Images url={logo} />
-    </Link>
+    <div className="back">
+      <div className="logo">
+        <Link to={"/LaMixtureria"}>
+          <Images url={logo} />
+        </Link>
+      </div>
     </div>
   );
 };
