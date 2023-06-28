@@ -1,5 +1,6 @@
 //import ReservasFS from '../model/DAOs/reservasFS.js'
 import ModelMongoDB from '../model/DAOs/reservasMongoDB.js'
+import MailSender from './mailSender.js'
 
 class ApiReservas {
 
@@ -16,7 +17,12 @@ class ApiReservas {
     }
 
     async guardarReserva(reserva) { 
-        return await this.reservasDAO.guardarReserva(reserva) 
+        let reservaNew = await this.reservasDAO.guardarReserva(reserva) 
+
+        //envio el email de reserva
+        MailSender.enviarMailReserva(reservaNew)
+        
+        return reservaNew
     }
 
     async eliminarReserva(id) { 
