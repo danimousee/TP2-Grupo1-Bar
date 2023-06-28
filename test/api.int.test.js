@@ -1,9 +1,8 @@
 import { expect } from "chai"
 import supertest from "supertest"
 import generador from './generador/reserva.js'
-import Server from './generador/reserva.js'
+import Server from '../server.js'
 
-const request = supertest('http://127.0.0.1:8080')
 
 describe('test apirest ful', () => {
 
@@ -13,7 +12,7 @@ describe('test apirest ful', () => {
            const app = await server.start()
 
            const request = supertest(app)
-           const response = await request.get('/LaMixtureria')
+           const response = await request.get('/LaMixtureria/Reservas')
 
            expect(response.status).to.eql(200)
 
@@ -27,11 +26,11 @@ describe('test apirest ful', () => {
             const app = await server.start()
 
             const request = supertest(app)
-            
-            const reserva = generador.get()
-            console.log(reserva)
 
-            const response = await request.post('/LaMixtureria').send(reserva)
+            const reserva = generador.get()
+            
+            const response = await request.post('/LaMixtureria/Reservas').send(reserva)
+
             expect(response.status).to.eql(200)
 
             const reser = response.body

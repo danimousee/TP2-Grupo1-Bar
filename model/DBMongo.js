@@ -29,10 +29,7 @@ class CnxMongoDB {
         await this.client.close()
         this.connectOk = false 
     }
-    async stop() {
-        this.server.close()
-        await CnxMongoDB.desconectar()
-    }
+   
 }
 
 export default CnxMongoDB
