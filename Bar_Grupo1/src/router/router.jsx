@@ -7,7 +7,7 @@ import TragosContainer from '../components/tragos/TragosContainer'
 import PlatosContainer from '../components/platos/PlatosContainer'
 import Home from '../components/Home'
 import Register from '../components/register/Register'
-
+import Sucursales from '../components/sucursales/Sucursales'
 
 const router = createBrowserRouter([
     {
@@ -37,7 +37,10 @@ const router = createBrowserRouter([
                 path: "/LaMixtureria/Reservas",
                 element: <Register />,
             },
-
+            {
+                path: "/LaMixtureria/Sucursales",
+                element: <Sucursales />,
+            }
         ],
     },
 
