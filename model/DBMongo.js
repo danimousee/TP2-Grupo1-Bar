@@ -1,4 +1,5 @@
 import { MongoClient }  from "mongodb";
+import config from "../config.js";
 
 class CnxMongoDB {
     static client = null
