@@ -1,6 +1,7 @@
 //import ReservasFS from '../model/DAOs/reservasFS.js'
 import ModelMongoDB from '../model/DAOs/reservasMongoDB.js'
 import MailSender from './mailSender.js'
+import { validar } from '../Validaciones/reservas.js'
 
 class ApiReservas {
 
@@ -8,29 +9,33 @@ class ApiReservas {
         this.reservasDAO = new ModelMongoDB()
     }
 
-    async obtenerReservas() { 
+    async obtenerReservas() {
         return await this.reservasDAO.obtenerReservas()
     }
 
-    async obtenerReserva(id) { 
+    async obtenerReserva(id) {
         return await this.reservasDAO.obtenerReservas(id)
     }
 
-    async guardarReserva(reserva) { 
-        let reservaNew = await this.reservasDAO.guardarReserva(reserva) 
+    guardarReserva = async (reserva) => {
 
-        //envio el email de reserva
-        MailSender.enviarMailReserva(reservaNew)
+    
+            let reservaNew = await this.reservasDAO.guardarReserva(reserva)
+
+            //envio el email de reserva
+            MailSender.enviarMailReserva(reservaNew)
+
+            return reservaNew
         
-        return reservaNew
+      
     }
 
-    async eliminarReserva(id) { 
-        return await this.reservasDAO.eliminarReserva(id) 
+    async eliminarReserva(id) {
+        return await this.reservasDAO.eliminarReserva(id)
     }
 
-    async actualizarReserva(id, reservaNew) { 
-        return await this.reservasDAO.actualizarReserva(id, reservaNew) 
+    async actualizarReserva(id, reservaNew) {
+        return await this.reservasDAO.actualizarReserva(id, reservaNew)
     }
 
 }
