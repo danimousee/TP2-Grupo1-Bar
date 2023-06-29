@@ -9,7 +9,7 @@ class MailSender {
             //service: process.env.EMAIL_SERVICE,
             host: process.env.EMAIL_HOST,
             secure: false,
-            port: process.env. EMAIL_PORT,
+            port: process.env.EMAIL_PORT,
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
@@ -21,7 +21,7 @@ class MailSender {
             from: process.env.EMAIL_USER,
             to: reserva.email,
             subject: 'Confirmacion de reserva en La Mixtureria',
-            html: '<h2>Gracias ' + reserva.nombre + '</h2>' + '<h4>Usted ha reservado para ' + reserva.cantidad_personas + ' personas para el dia ' + new Date(reserva.fecha_reserva * 1000).toLocaleDateString() + '</h4>'
+            html: '<h2>Usted ha reservado en La Mixtureria. Muchas gracias por confiar en nosotros!</h2>'
         };
 
         //Enviar el email
