@@ -8,7 +8,7 @@ describe('test apirest ful', () => {
 
     describe('GET', () => {
         it('deberia retornar un status 200', async () => {
-            const response = await request.get('/LaMixtureria')
+            const response = await request.get('/LaMixtureria/Reservas/')
             expect(response.status).to.eql(200)
         })
     })
@@ -18,7 +18,7 @@ describe('test apirest ful', () => {
             const reserva = generador.get()
             console.log(reserva)
 
-            const response = await request.post('/LaMixtureria').send(reserva)
+            const response = await request.post('/LaMixtureria/Reservas/').send(reserva)
             expect(response.status).to.eql(200)
 
             const reser = response.body
