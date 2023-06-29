@@ -1,13 +1,13 @@
-import JOI from 'joi'
+import Joi from 'joi'
 
 export const validar = reserva => {
     
-    const reservaSchema = JOI.object({
-        nombre: JOI.string().alphanum().required(),
-        cantidad_personas: JOI.number().min(1).max(20).required(),
-        email: JOI.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
-        telefono: JOI.number().required(),
-        fecha_reserva: JOI.date().required()
+    const reservaSchema = Joi.object({
+        nombre: Joi.string().alphanum().required(),
+        cantidad_personas: Joi.number().min(1).max(20).required(),
+        email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
+        telefono: Joi.number().required(),
+        fecha_reserva: Joi.date().required()
     })
 
     const { error } = reservaSchema.validate(reserva);
