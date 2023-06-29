@@ -21,7 +21,7 @@ class ApiReservas {
 
         const res = validar(reserva)
 
-        if (res) {
+        if (res.result) {
 
             const reservaNew = await this.reservasDAO.guardarReserva(reserva)
 

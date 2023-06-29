@@ -40,6 +40,7 @@ class ControladorReservas {
         }
         catch(error) {
             console.log({ error: error.message })
+            res.json({})
         }
     }
 
