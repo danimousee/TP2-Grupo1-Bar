@@ -6,7 +6,10 @@ class MailSender {
 
         //Configuracion del servicio
         var transporter = NodeMailer.createTransport({
-            service: process.env.EMAIL_SERVICE,
+            //service: process.env.EMAIL_SERVICE,
+            host: process.env.EMAIL_HOST,
+            secure: false,
+            port: process.env. EMAIL_PORT,
             auth: {
                 user: process.env.EMAIL_USER,
                 pass: process.env.EMAIL_PASS
