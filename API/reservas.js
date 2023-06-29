@@ -19,15 +19,21 @@ class ApiReservas {
 
     guardarReserva = async (reserva) => {
 
-    
-            let reservaNew = await this.reservasDAO.guardarReserva(reserva)
+        const res = validar(reserva)
+
+        if (res) {
+
+            const reservaNew = await this.reservasDAO.guardarReserva(reserva)
 
             //envio el email de reserva
             MailSender.enviarMailReserva(reservaNew)
 
             return reservaNew
-        
-      
+        }
+        else {
+            throw res.error
+        }
+
     }
 
     async eliminarReserva(id) {
