@@ -5,10 +5,10 @@ import { useForm } from "react-hook-form"
 const Register = () => {
   const [data, setData] = useState({
     nombre: "",
-    cantPersonas: 0,
+    cantidad_personas: 0,
     email: "",
     telefono: "",
-    fecha: ""
+    fecha_reserva: ""
   });
 
   const handleInput = (e) => {
@@ -48,15 +48,15 @@ const Register = () => {
         />
         
 
-        <label htmlFor="cantPersonas">Personas</label>
+        <label htmlFor="cantidad_personas">Personas</label>
         <input
           required
           min={1}
           max={5}
           type="number"
-          name="cantPersonas"
-          id="cantPersonas"
-          value={data?.cantPersonas || 1}
+          name="cantidad_personas"
+          id="cantidad_personas"
+          value={data?.cantidad_personas || 1}
           onInput={handleInput}
         />
 
@@ -72,13 +72,13 @@ const Register = () => {
           onInput={handleInput}
         />
 
-<label htmlFor="fecha">Fecha de reserva</label>
+<label htmlFor="fecha_reserva">Fecha de reserva</label>
         <input
           required
           type="datetime-local"
-          name="fecha"
-          id="fecha"
-          value={data?.fecha || ""}
+          name="fecha_reserva"
+          id="fecha_reserva"
+          value={data?.fecha_reserva || ""}
           onInput={handleInput}
         />
 

@@ -3,7 +3,7 @@ import Joi from 'joi'
 export const validar = reserva => {
     
     const reservaSchema = Joi.object({
-        nombre: Joi.string().alphanum().required(),
+        nombre: Joi.string().required(),
         cantidad_personas: Joi.number().min(1).max(20).required(),
         email: Joi.string().email({ minDomainSegments: 2, tlds: { allow: ['com', 'net'] } }).required(),
         telefono: Joi.number().required(),
