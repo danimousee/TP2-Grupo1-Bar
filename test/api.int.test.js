@@ -34,10 +34,19 @@ describe('test apirest ful', () => {
             expect(response.status).to.eql(200)
 
             const reser = response.body
-            expect(reser).to.include.keys('nombre', 'cantidad_personas')
+            expect(reser).to.include.keys('nombre', 'cantidad_personas', 'telefono', 'email', 'fecha_reserva')
+
+
 
             expect(reser.nombre).to.eql(reserva.nombre)
             expect(reser.cantidad_personas).to.eql(reserva.cantidad_personas)
+            expect(reser.telefono).to.eql(reserva.telefono)
+            expect(reser.email).to.eql(reserva.email)
+
+            const reserva_fecha_reserva = new Date(reserva.fecha_reserva)
+            const reser_fecha_reserva = new Date(reser.fecha_reserva)
+
+            expect(reser_fecha_reserva).to.eql(reserva_fecha_reserva)
 
             await server.stop()
         })
